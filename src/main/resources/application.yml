@@ -1,0 +1,5 @@
+spring:
+   data:
+        elasticsearch:
+            cluster-name: my-application
+            cluster-nodes: 47.106.102.151:9300 #节点的地址，注意api模式下的端口号是9300，千万不要写成9300
