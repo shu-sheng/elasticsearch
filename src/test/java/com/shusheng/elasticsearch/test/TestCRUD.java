@@ -2,6 +2,7 @@ package com.shusheng.elasticsearch.test;
 
 import com.shusheng.elasticsearch.Main;
 import com.shusheng.elasticsearch.dao.domain.User;
+import com.shusheng.elasticsearch.dao.repository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -25,10 +26,24 @@ public class TestCRUD {
     @Autowired
     ElasticsearchTemplate elasticsearchTemplate;
 
+    @Autowired
+    UserRepository userRepository;
+
     @Test
-    public void testCreate(){
-        logger.info("测试添加功能");
+    public void testCreateIndex(){
+        logger.info("测试创建索引功能");
         elasticsearchTemplate.createIndex(User.class);
+    }
+
+    @Test
+    public void testSaveDocument(){
+        logger.info("测试添加功能");
+        User user = new User();
+        user.setId(1L);
+        user.setFirstName("shu");
+        user.setLastName("sheng");
+
+        userRepository.save(user);
     }
 
 

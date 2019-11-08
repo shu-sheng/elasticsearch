@@ -11,7 +11,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
  * @Email eric_wu_peng@126.com
  * @Date 2019/11/8
  */
-@Document(indexName = "company",type = "employee",shards = 1,replicas = 0,refreshInterval = "-1")
+@Document(indexName = "company",type = "user",shards = 1,replicas = 0,refreshInterval = "-1")
 public class User {
 
     @Id
